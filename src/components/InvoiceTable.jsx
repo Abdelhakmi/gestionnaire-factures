@@ -5,7 +5,7 @@ export default function InvoiceTable({ invoices, onRemove }) {
         <thead className="table-dark">
           <tr>
             <th>#</th>
-            <th>Fichier</th>
+            <th>Facture</th>
             <th>Numéro</th>
             <th>Date</th>
             <th className="text-end">Montant (DH)</th>

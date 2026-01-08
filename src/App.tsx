@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="container min-vh-100 d-flex flex-column align-items-center p-4">
-      <h2 className="mb-4 text-center">📊 Calculateur Factures Indrive</h2>
+      <h2 className="mb-4 text-center">📊 Gestionnaire de Factures</h2>
 
       {/* Zone drag & drop */}
       <div className="w-100 mb-3">
