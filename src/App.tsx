@@ -2,6 +2,8 @@ import { useState } from "react";
 import FileDropzone from "./components/FileDropzone.jsx";
 import InvoiceTable from "./components/InvoiceTable.jsx";
 import { parseInvoice } from "./utils/parseInvoice.js";
+import logo from "./images/logo.png"
+import "./App.css"
 
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
@@ -59,7 +61,7 @@ function App() {
 
   return (
     <div className="container min-vh-100 d-flex flex-column align-items-center p-4">
-      <h2 className="mb-4 text-center">📊 Gestionnaire de Factures</h2>
+      <h2 className="mb-4 text-center"><img src={logo} alt="" id="logo" /> Gestionnaire de Factures</h2>
 
       {/* Zone drag & drop */}
       <div className="w-100 mb-3">
