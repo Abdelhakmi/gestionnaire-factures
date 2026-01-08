@@ -2,8 +2,8 @@ import { useState } from "react";
 import FileDropzone from "./components/FileDropzone.jsx";
 import InvoiceTable from "./components/InvoiceTable.jsx";
 import { parseInvoice } from "./utils/parseInvoice.js";
-import logo from "./images/logo.png"
-import "./App.css"
+import logo from "./images/logo.png";
+import "./App.css";
 
 import * as XLSX from "xlsx";
 import { saveAs } from "file-saver";
@@ -60,34 +60,38 @@ function App() {
   };
 
   return (
-    <div className="container min-vh-100 d-flex flex-column align-items-center p-4">
-      <h2 className="mb-4 text-center"><img src={logo} alt="" id="logo" /> Gestionnaire de Factures</h2>
+    <div className="main">
+      <div className="container min-vh-100 d-flex flex-column align-items-left p-4">
+        <h2 className="mb-4 text-center m-5">
+          <img src={logo} alt="" id="logo" /> Gestionnaire de Factures
+        </h2>
 
-      {/* Zone drag & drop */}
-      <div className="w-100 mb-3">
-        <FileDropzone onFiles={handleFiles} />
-      </div>
-
-      {/* Boutons + total */}
-      <div className="d-flex justify-content-between align-items-center mb-3 w-100 gap-3 flex-wrap">
-        <button className="btn btn-outline-secondary" onClick={clearInvoices}>
-          <strong>⟲ </strong>Vider le tableau
-        </button>
-        <div
-          className="alert alert-info mb-0"
-          style={{ minWidth: "120px", textAlign: "center" }}
-        >
-          Total : {total.toFixed(2)} DH
+        {/* Zone drag & drop */}
+        <div className="w-100 mb-3">
+          <FileDropzone onFiles={handleFiles} />
         </div>
-        <button className="btn btn-outline-success" onClick={downloadExcel}>
-          🗎 Télécharger en Excel
-        </button>
-      </div>
 
-      {/* Tableau */}
-      <div className="w-100 d-flex justify-content-center">
-        <div className="w-100" style={{ maxWidth: "1200px" }}>
-          <InvoiceTable invoices={invoices} onRemove={removeInvoice} />
+        {/* Boutons + total */}
+        <div className="d-flex justify-content-between align-items-center mb-3 w-100 gap-3 flex-wrap">
+          <button className="btn btn-outline-secondary" onClick={clearInvoices}>
+            <strong>⟲ </strong>Vider le tableau
+          </button>
+          <div
+            className="alert border-purple bg-purple mb-0"
+            style={{ minWidth: "120px", textAlign: "center" }}
+          >
+            <strong>Total : {total.toFixed(2)} DH</strong>
+          </div>
+          <button className="btn btn-outline-success" onClick={downloadExcel}>
+            🗎 Télécharger en Excel
+          </button>
+        </div>
+
+        {/* Tableau */}
+        <div className="w-100 d-flex justify-content-center">
+          <div className="w-100" style={{ maxWidth: "1200px" }}>
+            <InvoiceTable invoices={invoices} onRemove={removeInvoice} />
+          </div>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ export default function FileDropzone({ onFiles }) {
   return (
     <div
       {...getRootProps()}
-      className="border border-primary rounded p-4 text-center mb-3"
+      className="border border-purple rounded p-4 text-center mb-3"
       style={{ cursor: 'pointer', backgroundColor: '#f8f9fa' }}
     >
       <input {...getInputProps()} />
